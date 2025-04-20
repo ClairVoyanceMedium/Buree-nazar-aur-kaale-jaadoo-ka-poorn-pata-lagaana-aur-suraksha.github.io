@@ -1,42 +1,100 @@
-# Indique aux robots que toutes les pages peuvent être explorées, sauf restrictions spécifiées
+# Robots.txt ऑप्टिमाइज़ किया गया 2025 के लिए - भारत के लिए नंबर 1
+# भारतीय बाजार, गूगल इंडिया, वॉयस असिस्टेंट और उन्नत SEO के लिए डिज़ाइन किया गया
+# वेबसाइट: https://clairvoyancemedium.github.io/Buree-nazar-aur-kaale-jaadoo-ka-poorn-pata-lagaana-aur-suraksha.github.io/
+# अंतिम अपडेट: 20/04/2025 14:00 GMT
+# नोट: Google Search Console और robotstxt.org के साथ टेस्ट करें
+
+##########################
+# सामान्य अनुमति         #
+##########################
 User-agent: *
-Disallow: /admin/
-Disallow: /tmp/
+Disallow: /private/          # निजी फ़ोल्डर (उदाहरण: एडमिन, स्क्रिप्ट)
+Disallow: /temp/             # अस्थायी फ़ोल्डर
+Disallow: /*?*               # डुप्लिकेट सामग्री से बचें (URL पैरामीटर)
+Allow: /*.css$               # इष्टतम रेंडरिंग के लिए CSS
+Allow: /*.js$                # आवश्यक JS
+Allow: /*.pdf$               # रणनीतिक PDF (उदाहरण: गाइड)
+Allow: /                     # डिफ़ॉल्ट अनुमति
+
+########################################
+# Googlebot (Google India और AI 2025)  #
+########################################
+User-agent: Googlebot
+Disallow: /private/
+Disallow: /temp/
+Allow: /vastu-shastra/       # वास्तु शास्त्र सामग्री
+Allow: /suraksha-upay/       # सुरक्षा उपाय
+Allow: /buree-nazar/         # बुरी नजर और काला जादू
+
+###########################################
+# वॉयस असिस्टेंट                         #
+###########################################
+User-agent: Googlebot-Voice
+Disallow: /private/
+Disallow: /temp/
+Allow: /prashnottari/        # प्रश्नोत्तरी (FAQ)
+Allow: /saral-upay/          # सरल उपाय
+Allow: /salah/               # सलाह
+User-agent: Amazonbot        # Alexa के लिए
+Disallow: /private/
+Disallow: /temp/
+Allow: /prashnottari/
+Allow: /salah/
+User-agent: Applebot         # Siri के लिए
+Disallow: /private/
+Disallow: /temp/
+Allow: /prashnottari/
+Allow: /salah/
+
+###########################################
+# Bing (भारत और अंतरराष्ट्रीय)           #
+###########################################
+User-agent: Bingbot
+Disallow: /private/
+Disallow: /temp/
+
+#################################
+# अवांछित बॉट्स को ब्लॉक करें   #
+#################################
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
+
+##################################################
+# Google पार्टनर और एनालिटिक्स                   #
+##################################################
+User-agent: Mediapartners-Google
+Disallow: /private/
+User-agent: AdsBot-Google
 Disallow: /private/
 
-# Bloquer des URL avec paramètres inutiles pour l'indexation
-Disallow: /*?debug=true
-Disallow: /*?preview=true
+##################################################
+# उभरते AI क्रॉलर (2025 के लिए अनुमान)          #
+##################################################
+User-agent: xAI-Crawler
+Disallow: /private/
+User-agent: OpenAI-Crawler
+Disallow: /private/
+User-agent: AnthropicBot
+Disallow: /private/
+User-agent: Qwantify         # अंतरराष्ट्रीय
+Disallow: /private/
 
-# Permettre les fichiers nécessaires au bon affichage et fonctionnement
-Allow: /css/
-Allow: /js/
-Allow: /images/
+##################################################
+# मोबाइल-फर्स्ट ऑप्टिमाइज़ेशन                   #
+##################################################
+User-agent: Googlebot-Mobile
+Disallow: /private/
+Disallow: /temp/
+Allow: /vastu-shastra/
+Allow: /suraksha-upay/
+Allow: /buree-nazar/
 
-# Référencement des ressources multimédias
-Allow: *.png
-Allow: *.jpg
-Allow: *.webp
-Allow: *.css
-Allow: *.js
-
-# Fournir le chemin du fichier sitemap pour une meilleure indexation
-Sitemap: https://www.clairvoyancemedium.com/sitemap.xml
-
-# Autorisation pour les robots Google et Bing pour maximiser les campagnes publicitaires
-User-agent: Googlebot
-Allow: /
-User-agent: AdsBot-Google
-Allow: /
-User-agent: Bingbot
-Allow: /
-
-# Bloquer les robots nuisibles ou non désirés
-User-agent: BadBot
-Disallow: /
-User-agent: EvilScraper
-Disallow: /
-
-# Empêcher l'exploration des fichiers sensibles
-Disallow: /config/
-Disallow: /backup/
+##################
+# साइटमैप और क्रॉल #
+##################
+Sitemap: https://clairvoyancemedium.github.io/Buree-nazar-aur-kaale-jaadoo-ka-poorn-pata-lagaana-aur-suraksha.github.io/sitemap.xml
+Crawl-delay: 0.5
